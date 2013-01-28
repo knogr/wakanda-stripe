@@ -4,34 +4,51 @@
 // For full API calls, see the API documentation on stripe.com
 // Usage Example:
 
-var stripe = require('stripe').init(<YOUR_SECRET_STRIPE_API_KEY>);
+var stripe = require('stripe').init('YOUR_SECRET_STRIPE_API_KEY');
 
 var data = {
-  	amount: '7743',
+	amount: '2100',  // $21.00
 	currency: 'usd',
-	card: 'tok_asdfEWewf324',
-	description: 'stripe test'
+	card: 'SINGLE_USE_TOKEN',  // single-use token returned by stripe.js from client side
+	description: 'API wrapper test'
 }
 
 // Create a charge
 stripe.charges.create(data,
 	function(err, result) {
-    		// Just output some of the response values for testing purposes
-		console.log(result.description);
-		console.log('Stripe fee: ' + result.fee_details[0].amount);
-		console.log('Country: ' + result.card.country);
-		console.log('Paid: ' + result.paid);
-		console.log('Total Amount Paid: ' + result.amount);
+		if(err) {
+			// Handle the error
+			// Debugger console
+			console.log('Error Status : ' + err);
+			console.log(result.error.message);
+		} else {
+			// Do something with the success
+			// Debugger console
+			console.log('Operation successful');
+			console.log(result.description);
+			console.log('Stripe fee: ' + result.fee_details[0].amount);
+			console.log('Country: ' + result.card.country);
+			console.log('Paid: ' + result.paid);
+			console.log('Total Amount Paid: ' + result.amount);
+		}
 	}
 );
 
 // Create a customer
-stripe.customers.create( {email: 'foobar@exampple.org'},
+stripe.customers.create( {email: 'developer@vetdispatch.com'},
 	function(err, customer) {
-      		if (err) {
-         		console.log("Couldn't create the customer record");
-         		return;
+		if (err) {
+	      		// Handle the error
+			// Debugger console
+			console.log('Error Status : ' + err);
+			console.log(result.error.message);
+      		} else {
+	      		// Do something with the success
+			// Debugger console
+	      		console.log('Operation successful');
+	      		console.log("customer id", customer.id);
       		}
-      	console.log("customer id", customer.id);
-   	}
-);
+	}
+  );
+
+// TRY THE OTHER API CALLS IN A SIMILAR PATTERN
