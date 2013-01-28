@@ -4,7 +4,7 @@
 // For full API calls, see the API documentation on stripe.com
 // Usage Example:
 
-var stripe = require('stripe')(<YOUR_SECRET_STRIPE_API_KEY>);
+var stripe = require('stripe').init(<YOUR_SECRET_STRIPE_API_KEY>);
 
 var data = {
   	amount: '7743',
