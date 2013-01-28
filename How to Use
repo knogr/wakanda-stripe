@@ -1,0 +1,39 @@
+How to Use
+
+Place the stripe.js file in the Modules directory in your Wakanda project (at the same level as the WebFolder).
+
+For full API calls, see the API documentation on stripe.com
+
+Usage Example:
+
+var stripe = require('stripe')(<YOUR_SECRET_STRIPE_API_KEY>);
+
+var data = {
+  amount: '7743',
+	currency: 'usd',
+	card: 'tok_asdfEWewf324',
+	description: 'stripe test'
+}
+
+// Create a charge
+stripe.charges.create(data,
+	function(err, result) {
+    // Just output some of the response values for testing purposes
+		console.log(result.description);
+		console.log('Stripe fee: ' + result.fee_details[0].amount);
+		console.log('Country: ' + result.card.country);
+		console.log('Paid: ' + result.paid);
+		console.log('Total Amount Paid: ' + result.amount);
+	}
+);
+
+// Create a customer
+stripe.customers.create( {email: 'foobar@exampple.org'},
+	function(err, customer) {
+      if (err) {
+         console.log("Couldn't create the customer record");
+         return;
+      }
+      console.log("customer id", customer.id);
+   }
+  );
