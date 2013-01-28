@@ -1,5 +1,7 @@
 How to Use
 
+This is server side javascript!
+
 Place the stripe.js file in the Modules directory in your Wakanda project (at the same level as the WebFolder).
 
 For full API calls, see the API documentation on stripe.com
