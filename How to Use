@@ -1,17 +1,13 @@
-How to Use
-
-This is server side javascript!
-
-Place the stripe.js file in the Modules directory in your Wakanda project (at the same level as the WebFolder).
-
-For full API calls, see the API documentation on stripe.com
-
-Usage Example:
+// How to Use
+// This is server side javascript!
+// Place the stripe.js file in the Modules directory (at the same level as the WebFolder) in your Wakanda project.
+// For full API calls, see the API documentation on stripe.com
+// Usage Example:
 
 var stripe = require('stripe')(<YOUR_SECRET_STRIPE_API_KEY>);
 
 var data = {
-  amount: '7743',
+  	amount: '7743',
 	currency: 'usd',
 	card: 'tok_asdfEWewf324',
 	description: 'stripe test'
