@@ -35,7 +35,7 @@ stripe.charges.create(data,
 );
 
 // Create a customer
-stripe.customers.create( {email: 'developer@vetdispatch.com'},
+stripe.customers.create( {email: 'foobar@example.com'},
 	function(err, customer) {
 		if (err) {
 	      		// Handle the error
@@ -49,6 +49,6 @@ stripe.customers.create( {email: 'developer@vetdispatch.com'},
 	      		console.log("customer id", customer.id);
       		}
 	}
-  );
+);
 
 // TRY THE OTHER API CALLS IN A SIMILAR PATTERN
