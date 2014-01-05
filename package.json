@@ -1,15 +1,15 @@
 {
     "name": "wakanda-stripe",
     "description": "Wakanda bindings to access stripe.com SSJS API",
-    "version": "0.2",
-    "author": "Anvivia LLC",
+    "version": "0.7",
+    "author": "Tunc Hoscan",
     "repository": {
         "type": "git",
-        "url": "https://github.com/anvivia/wakanda-stripe.git"
+        "url": "https://github.com/knogr/wakanda-stripe.git"
     },
     "keywords": ["wakanda", "ssjs", "stripe", "stripe.com", "credit card", "charges"],
-    "dependencies" : {"querystring" : "https://github.com/anvivia/wakanda-querystring/tarball/master"},
+    "dependencies" : {"querystring" : "https://github.com/knogr/wakanda-querystring/tarball/master"},
     "main": "./stripe.js",
-    "engines": {"wakanda" : ">=3.0"},
+    "engines": {"wakanda" : ">=6.0"},
     "license": "MIT"
 }
